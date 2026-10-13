@@ -395,7 +395,7 @@ qdrant_data/
 .qdrant_data/
 qdrant_config/
 
-# Publication cleanup for 123fool/Multi-Agent-RAG-Customer-Support
+# Local configuration and runtime data
 .claude/
 .cursor/
 .env.*

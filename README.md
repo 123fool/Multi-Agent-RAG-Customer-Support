@@ -23,8 +23,6 @@
 - 仓库：[123fool/Multi-Agent-RAG-Customer-Support](https://github.com/123fool/Multi-Agent-RAG-Customer-Support)
 - 许可证：Apache License 2.0，见 [LICENSE](LICENSE)。
 
-公开版本已清理本地开发配置、原演示截图、临时调试文件及已有评测输出；源码保留当前工作区的 Embedding 接入实现。
-
 ## 项目结构
 
 ```
@@ -112,7 +110,7 @@ pip install -U "langgraph-cli[inmem]"
 在win环境中，langgraph-cli下载后，需要将`langgraph.exe`路径加入PATH环境变量。或者使用时直接带全路径，例`<your site-packages>\bin\langgraph.exe`
 
 ### 2. 环境变量配置
-复制 `env_example.txt` 为 `.env` 文件并填入自己的 API 密钥。配置示例中的密钥字段为空；Flask 会话密钥可通过 `FLASK_SECRET_KEY` 配置，未设置时使用进程内随机密钥。主要环境变量：
+复制 `env_example.txt` 为 `.env` 文件并配置 API 密钥。Flask 会话密钥通过 `FLASK_SECRET_KEY` 配置，未设置时使用进程内随机密钥。主要环境变量：
 
 | 变量名 | 说明 | 默认值 |
 |-------|------|-------|
@@ -275,12 +273,6 @@ python -m rag.init_knowledge
 - [LangGraph MCP适配器](https://github.com/langchain-ai/langchain-mcp-adapters)
 
 
-## 示例数据与隐私
-
-`knowledge/` 中的内容用于演示客服知识检索；联系方式已改为示例邮箱和占位名称，评测用例已同步更新。请勿将这些演示资料视为维护者的个人信息或真实业务承诺。
-
-`.env`、开发工具本地配置、LangGraph 状态、Qdrant 数据、历史会话及生成的评测报告不提交到公开仓库。运行评测后可在本地生成新的结果。
-
 ## 回归测试
 
 ```bash
@@ -288,7 +280,3 @@ python -m unittest discover -s tests -v
 ```
 
 测试覆盖 RAG 无结果时技术支持、账单与综合客服的关键词回退路径；不需要调用外部模型或向量数据库。
-
-## 技术来源
-
-- LangGraph、LangChain 与 Qdrant 等依赖的相关文档见上文。
