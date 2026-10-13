@@ -1,0 +1,56 @@
+# Example environment variables for Multi-Agent RAG Customer Support
+# Copy this file to .env and edit as needed
+
+# ===== SiliconFlow API (OpenAI-compatible) =====
+OPENAI_API_KEY=
+OPENAI_BASE_URL=https://api.siliconflow.cn/v1
+OPENAI_MODEL=Qwen/Qwen3-8B
+
+# ===== HTTP client =====
+HTTP_TIMEOUT=30
+HTTP_MAX_RETRIES=3
+
+# ===== Logging =====
+LOG_LEVEL=INFO
+
+# ===== Flask web app (web_app.py) =====
+FLASK_PORT=5000
+FLASK_DEBUG=False
+FLASK_SECRET_KEY=
+
+# LangGraph HTTP API (see chat_web_service.py)
+# LANGGRAPH_API_URL=http://127.0.0.1:2024
+# LANGGRAPH_GRAPH_NAME=customer_service
+
+# ===== Notes =====
+
+# 1. API key
+# Sign up at https://api.siliconflow.cn and create an API key
+
+# 2. Model choice
+# Examples:
+# - Qwen/QwQ-32B (recommended, strongest)
+# - Qwen/Qwen3-8B (good cost/performance)
+# - Qwen/Qwen3-14B (better quality)
+# - Qwen/Qwen3-32B (highest quality)
+# - Qwen/Qwen2.5-7B (lightweight)
+# - Qwen/Qwen2.5-14B (balanced)
+
+# 3. Optional overrides
+# To change timeout or retries, edit e.g.:
+# HTTP_TIMEOUT=60
+# HTTP_MAX_RETRIES=5
+
+# Windows: if `langgraph dev` fails loading .env with UnicodeDecodeError, keep comments
+# ASCII-only (as here) or save .env as UTF-8 with BOM.
+
+# Set a random FLASK_SECRET_KEY for persistent sessions across restarts.
+# If unset, Flask uses a random per-process session key.
+# Optional Qdrant server; leave empty to use local file storage.
+QDRANT_URL=
+QDRANT_API_KEY=
+
+# Optional LangSmith tracing; add your own key locally before enabling.
+LANGSMITH_TRACING=false
+LANGSMITH_API_KEY=
+LANGSMITH_PROJECT=Multi-Agent-RAG-Customer-Support
