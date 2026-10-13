@@ -291,5 +291,4 @@ python -m unittest discover -s tests -v
 
 ## 技术来源
 
-- 项目参考：[zhouyan6/multi-agent-customer-service](https://github.com/zhouyan6/multi-agent-customer-service)。
 - LangGraph、LangChain 与 Qdrant 等依赖的相关文档见上文。
